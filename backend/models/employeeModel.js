@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
-const employeeSchema = new mongoose.Schema({
+const Schema = mongoose.Schema
+
+
+const employeeSchema = new Schema({
   EmployeeID: {
     type: Number, 
     required: true,
@@ -24,6 +27,4 @@ const employeeSchema = new mongoose.Schema({
   },
 });
 
-const Employee = mongoose.model("Employee", employeeSchema);
-
-module.exports = Employee;
+module.exports = mongoose.model('Employee', employeeSchema)

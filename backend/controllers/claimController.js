@@ -1,17 +1,16 @@
-const employee = require('../models/employeeModel')
-const insuranceClaim = require('../models/insuranceClaimModel')
-const insurancePolicy = require('../models/insurancePolicyModel')
+const Employee = require('../models/employeeModel');
 
-const mongoose = require('mongoose')
-
-// get all employees
+// Get all employees
 const getEmployees = async (req, res) => {
-    const employees = await employee.find({}).sort({createdAt: -1})
-  
-    res.status(200).json(workouts)
+  try {
+    const employees = await Employee.find();
+    res.status(200).json(employees);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error', error: error.message });
   }
+};
 
-
-  module.exports = {
-    getEmployees
-  }
+module.exports = {
+  getEmployees,
+};

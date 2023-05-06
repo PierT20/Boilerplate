@@ -49,6 +49,6 @@ const insuranceClaimSchema = new mongoose.Schema({
   },
 });
 
-const InsuranceClaim = mongoose.model("InsuranceClaim", insuranceClaimSchema);
+const InsuranceClaims = mongoose.model("InsuranceClaims", insuranceClaimSchema);
 
-module.exports = InsuranceClaim;
+module.exports = InsuranceClaims;
